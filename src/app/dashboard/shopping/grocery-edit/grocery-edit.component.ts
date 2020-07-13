@@ -1,10 +1,14 @@
 import { Component, OnInit } from '@angular/core';
+import { groceryItem } from '../groceryItem';
+import { GroceryListComponent } from '../grocery-list/grocery-list.component';
 
 @Component({
   selector: 'app-grocery-edit',
   templateUrl: './grocery-edit.component.html',
   styleUrls: ['./grocery-edit.component.css']
 })
+
+
 export class GroceryEditComponent implements OnInit {
 
   constructor() { }
@@ -14,8 +18,9 @@ export class GroceryEditComponent implements OnInit {
 
   newGroceryItem = '';
   newItemAmount = 0;
-  groceryList = [];
   
+  groceryList = [];
+  randvar = 'Hi there!';
 
   onNameChange(event: any) {
     this.newGroceryItem = event.target.value;
@@ -26,10 +31,11 @@ export class GroceryEditComponent implements OnInit {
   }
 
   addItem() {
-    this.groceryList.push({
+    const newItem: groceryItem = {
       name: this.newGroceryItem,
       amount: this.newItemAmount
-    });
+    }
+    this.groceryList.push(newItem);
     this.newGroceryItem = '';
     this.newItemAmount = 0;
   }

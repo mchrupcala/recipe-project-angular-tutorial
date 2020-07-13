@@ -7,3 +7,5 @@
 
     <button mat-raised-button color="primary" (click)="addItem()">Add</button>
 </div>
+
+<div *ngFor="let item of groceryList">{{item.name}} ({{item.amount}})</div>
