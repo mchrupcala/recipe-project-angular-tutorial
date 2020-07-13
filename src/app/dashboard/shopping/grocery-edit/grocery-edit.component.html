@@ -1,1 +1,9 @@
-<p>grocery-edit works!</p>
+<div class="grocery-item-form">
+    <label>Add item to your grocery list:</label>
+    <input type="text" (keyup)="onNameChange($event)" />
+
+    <label>How many?</label>
+    <input type="text" (keyup)="onAmountChange($event)" />
+
+    <button mat-raised-button color="primary" (click)="addItem()">Add</button>
+</div>

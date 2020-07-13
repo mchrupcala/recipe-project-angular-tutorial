@@ -12,4 +12,25 @@ export class GroceryEditComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  newGroceryItem = '';
+  newItemAmount = 0;
+  groceryList = [];
+  
+
+  onNameChange(event: any) {
+    this.newGroceryItem = event.target.value;
+  }
+
+  onAmountChange(event: any) {
+    this.newItemAmount = event.target.value;
+  }
+
+  addItem() {
+    this.groceryList.push({
+      name: this.newGroceryItem,
+      amount: this.newItemAmount
+    });
+    this.newGroceryItem = '';
+    this.newItemAmount = 0;
+  }
 }
